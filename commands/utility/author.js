@@ -5,6 +5,6 @@ module.exports = {
         .setName('artist')
         .setDescription('Provides information about the artist.'),
     async execute(interaction) {
-        await interaction.reply(`Reply to "artist" works ✅`);
+        await interaction.reply(`Reply to "author" works ✅`);
     },
 };

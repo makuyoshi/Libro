@@ -15,6 +15,6 @@ module.exports = {
         .setName('album')
         .setDescription('Provides information about the album.'),
     async execute(interaction) {
-        await interaction.reply({embeds: [embed]});
+        await interaction.reply("Reply to /search works :)");
     },
 };

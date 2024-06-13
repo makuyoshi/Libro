@@ -5,6 +5,6 @@ module.exports = {
         .setName('song')
         .setDescription('Replies with info about the given song'),
     async execute(interaction) {
-        await interaction.reply('Reply to "song" works ✅');
+        await interaction.reply('Reply to "/book" works ✅');
     },
 };
