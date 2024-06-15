@@ -6,16 +6,13 @@ const authorInfoTemplate = {
     title: '',
     url: '',
     description: '',
-    thumbnail: {
-        url: 'https://i.imgur.com/AfFp7pu.png',
-    },
     fields: []
 };
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('s')
-        .setDescription('/s <query> | Search for books.')
+        .setName('search')
+        .setDescription('/search <query> | Search for books.')
         .addStringOption(option =>
             option.setName('input')
                 .setDescription('The input to echo back')
@@ -30,16 +27,16 @@ module.exports = {
 
             console.log(data)
 
-            authorInfo.title = query;
+            authorInfo.title = `Displaying results for: ${query}`;
             authorInfo.description = `Found ${data.totalItems} items.`
 
             const books = data.items.map(item => ({
                 name: `${item.volumeInfo.title? item.volumeInfo.title : 'Unknown Title'}`,
-                value: item.volumeInfo.publishedDate || 'No date found',
+                value: item.volumeInfo.authors.join(', ') || 'No date found',
                 inline: true
             }));
 
-            authorInfo.fields = books.slice(0, 10);
+            authorInfo.fields = books.slice(0, 9);
 
             await interaction.reply({ embeds: [authorInfo] });
         } catch (error) {
