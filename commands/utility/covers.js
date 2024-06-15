@@ -1,0 +1,1 @@
+// Display covers of book based on a search query.
