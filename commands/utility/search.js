@@ -5,7 +5,7 @@ const authorInfoTemplate = {
     color: 0x0099ff,
     title: '',
     url: '',
-    description: 'Found books matching query.',
+    description: '',
     thumbnail: {
         url: 'https://i.imgur.com/AfFp7pu.png',
     },
@@ -14,10 +14,14 @@ const authorInfoTemplate = {
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('sa')
-        .setDescription('/sa <query> | Search for books.'),
+        .setName('s')
+        .setDescription('/s <query> | Search for books.')
+        .addStringOption(option =>
+            option.setName('input')
+                .setDescription('The input to echo back')
+                .setRequired(true)),
     async execute(interaction) {
-        const query = "Brandon%20Sanderson" /*interaction.options.getString('query');*/
+        const query = interaction.options.getString('input');
         const authorInfo = {...authorInfoTemplate };
 
         try {
@@ -27,6 +31,7 @@ module.exports = {
             console.log(data)
 
             authorInfo.title = query;
+            authorInfo.description = `Found ${data.totalItems} items.`
 
             const books = data.items.map(item => ({
                 name: `${item.volumeInfo.title? item.volumeInfo.title : 'Unknown Title'}`,
@@ -34,7 +39,7 @@ module.exports = {
                 inline: true
             }));
 
-            authorInfo.fields = books.slice(0, 7);
+            authorInfo.fields = books.slice(0, 10);
 
             await interaction.reply({ embeds: [authorInfo] });
         } catch (error) {
