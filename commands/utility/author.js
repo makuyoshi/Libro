@@ -24,8 +24,9 @@ module.exports = {
                     .setColor('#0099ff')
                     .setTitle(`${author.name}`)
                     .setURL(`https://openlibrary.org/search?q=${encodeURIComponent(authorName)}`)
-                    .setDescription(`**Genre:** ${author.top_subjects[0]}`)
-                    .addFields({name: "**Most famous work:**", value: `${author.top_work}`, inline: true})
+                    .addFields([
+                        {name: "**Genre:**", value: `${author.top_subjects[0]}`},
+                        {name: "**Most famous work:**", value: `${author.top_work}`}])
                     .setFooter({ text: 'The /author command is under development ⚠️', iconURL: 'https://i.imgur.com/op3Vq3Q.jpeg' }); // remove later
 
 
