@@ -23,9 +23,7 @@ module.exports = {
                 const embed = new EmbedBuilder()
                     .setColor('#0099ff')
                     .setTitle(`${author.name}`)
-                    .setURL(`https://openlibrary.org${author.url}`)
-                    .setDescription(`Biography: ${author.bio}`)
-                    .setImage(author.author_image);
+                    .setDescription(`Genre: ${author.top_subjects[0]}`)
 
                 await interaction.reply({ embeds: [embed] });
             } else {
