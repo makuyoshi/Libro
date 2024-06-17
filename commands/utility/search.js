@@ -28,7 +28,7 @@ module.exports = {
             console.log(data)
 
             authorInfo.title = `Displaying results for: ${query}`;
-            authorInfo.description = `Found ${data.totalItems} items.`
+            authorInfo.description = `Found ${data.totalItems} items in total.`
 
             const books = data.items.map(item => ({
                 name: `${item.volumeInfo.title? item.volumeInfo.title : 'Unknown Title'}`,
