@@ -23,7 +23,11 @@ module.exports = {
                 const embed = new EmbedBuilder()
                     .setColor('#0099ff')
                     .setTitle(`${author.name}`)
-                    .setDescription(`Genre: ${author.top_subjects[0]}`)
+                    .setURL(`https://openlibrary.org/search?q=${encodeURIComponent(authorName)}`)
+                    .setDescription(`**Genre:** ${author.top_subjects[0]}`)
+                    .addFields({name: "**Most famous work:**", value: `${author.top_work}`, inline: true})
+                    .setFooter({ text: 'The /author command is under development ⚠️', iconURL: 'https://i.imgur.com/op3Vq3Q.jpeg' }); // remove later
+
 
                 await interaction.reply({ embeds: [embed] });
             } else {

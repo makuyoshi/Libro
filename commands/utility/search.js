@@ -6,7 +6,11 @@ const authorInfoTemplate = {
     title: '',
     url: '',
     description: '',
-    fields: []
+    fields: [],
+    footer: {
+        text: 'The /search command is under development ⚠️',
+        iconURL: 'https://i.imgur.com/op3Vq3Q.jpeg'
+    }
 };
 
 module.exports = {

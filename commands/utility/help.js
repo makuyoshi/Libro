@@ -7,7 +7,7 @@ const helpEmbed = new EmbedBuilder()
     .setFields([
         { name: '/help ✅', value: 'Displays this help menu.' },
         { name: '/search 🟨', value: 'Searches for content.' },
-        { name: '/author 🟨', value: 'Shows author information.' },
+        { name: '/author ❌', value: 'Shows author information.' },
         { name: '/covers ❌', value: 'Provides cover images.' },
         { name: '/genre ❌', value: 'Lists genres.' }
     ]);
