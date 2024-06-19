@@ -6,10 +6,10 @@ const helpEmbed = new EmbedBuilder()
     .setDescription('Here are all available commands.')
     .setFields([
         { name: '/help ✅', value: 'Displays this help menu.' },
-        { name: '/search 🟨 \t▰▰▰▱▱▱ 50%', value: 'Searches for content.' },
-        { name: '/author 🟨 \t▰▰▰▱▱▱ 50%', value: 'Shows author information.' },
-        { name: '/covers ❌ ▱▱▱▱▱▱ 0%', value: 'Provides cover images.' },
-        { name: '/genre ❌ ▱▱▱▱▱▱ 0%', value: 'Lists genres.' }
+        { name: '/search 🟨 \t▰▱▱▱ 25% ', value: 'Searches for content.' },
+        { name: '/author 🟨 \t▰▰▱▱ 50%', value: 'Shows author information.' },
+        { name: '/covers ❌ \t▱▱▱▱ 0%', value: 'Provides cover images.' },
+        { name: '/genre ❌ \t▱▱▱▱ 0%', value: 'Lists genres.' }
     ]);
 
 module.exports = {
